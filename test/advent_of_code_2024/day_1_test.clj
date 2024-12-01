@@ -15,7 +15,11 @@
 (deftest solution-part-one-given-example-input-then-example-result
   (is (= 11 (solution-part-one example-input))))
 
-(deftest solution-part-one-given-problem-input-then-example-result
+(deftest solution-part-one-given-problem-input-then-problem-result
   (is (= 2378066 (solution-part-one problem-input))))
 
+(deftest solution-part-two-given-example-input-then-example-result
+  (is (= 31 (solution-part-two example-input))))
 
+(deftest solution-part-two-given-problem-input-then-problem-result
+  (is (= 18934359 (solution-part-two problem-input))))

@@ -1,7 +1,8 @@
 (ns advent-of-code-2024.day-1
-  (:require [advent-of-code-2024.utils :refer [sum def- re-seq-matches]]
-            [clojure.java.io :as io]
-            [clojure.string :as string]))
+  (:require
+   [advent-of-code-2024.utils :refer [map-vals]]
+   [clojure.java.io :as io]
+   [clojure.string :as string]))
 
 (def problem-input
   (string/trim (slurp (io/resource "day-1-input.txt"))))
@@ -21,3 +22,11 @@
          (map distance)
          (apply +))))
 
+;; Part two
+
+(defn solution-part-two [input]
+  (let [[list-one list-two] (parse-input input)
+        frequencies         (->> list-two (group-by identity) (map-vals count))]
+    (->> list-one
+         (map (fn [x] (* x (get frequencies x 0))))
+         (apply +))))
