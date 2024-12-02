@@ -1,6 +1,6 @@
 (ns advent-of-code-2024.day-1
   (:require
-   [advent-of-code-2024.utils :refer [map-vals]]
+   [advent-of-code-2024.utils :refer [map-vals sum]]
    [clojure.java.io :as io]
    [clojure.string :as string]))
 
@@ -20,7 +20,7 @@
          (apply interleave)
          (partition 2)
          (map distance)
-         (apply +))))
+         (sum))))
 
 ;; Part two
 
@@ -29,4 +29,4 @@
         frequencies         (->> list-two (group-by identity) (map-vals count))]
     (->> list-one
          (map (fn [x] (* x (get frequencies x 0))))
-         (apply +))))
+         (sum))))
