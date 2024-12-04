@@ -8,7 +8,6 @@
 
 (def- example-input-two "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))")
 
-
 (deftest solution-part-one-given-example-input-then-example-result
   (is (= 161 (solution-part-one example-input-one))))
 
